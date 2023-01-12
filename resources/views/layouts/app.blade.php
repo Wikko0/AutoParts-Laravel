@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content=" " />
     <!-- Title -->
-    <title>Posh - Auto Parts eCommerce Bootstrap 4 Html Template</title>
+    <title>AutoParts - Laravel</title>
     <!-- Favicon  -->
     <link rel="shortcut icon" href="{{asset('assets/images/fevicon.png')}}" />
 
@@ -29,7 +29,7 @@
     <!-- Start Promotional Bar Section -->
     <div class="promotional-bar border-0 rounded-0 d-flex align-items-center alert alert-warning fade show" role="alert">
         <div class="container-fluid full-promotional-bar">
-            <span>Shop with discount 50%. Hurry Up! <a href="#">Shop Now</a></span>
+            <span>{{ __('app.shop_discount') }} <a href="#">{{ __('app.shop_now') }}</a></span>
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><i class="ti-close"></i></button>
         </div>
     </div>
@@ -46,7 +46,7 @@
                         <a href="#" class="closeNav-btn d-lg-none clearfix" id="closeNav" title="Close"><span class="menu-close mr-2">Close</span><i class="ti-close" aria-hidden="true"></i></a>
                         <ul class="navbar-nav">
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="#">Home<span class="arw plush" title="Click to show/hide"></span></a>
+                                <a class="nav-link" href="#">{{__('app.home')}}<span class="arw plush" title="Click to show/hide"></span></a>
                                 <!-- Start Megamenu Dropdown -->
                                 <div class="megamenu submenu dropdown">
                                     <ul>
@@ -59,7 +59,7 @@
                                 <!-- End Megamenu Dropdown -->
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Feature
+                                <a class="nav-link" href="#">{{__('app.feature')}}
                                     <span class="arw plush" title="Click to show/hide"></span>
                                     <span class="lbl hot">Hot</span></a>
                                 <!-- Start Megamenu Style 1 -->
@@ -154,7 +154,7 @@
                                 <!-- End Megamenu Style 1 -->
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Shop
+                                <a class="nav-link" href="#">{{__('app.shop')}}
                                     <span class="arw plush" title="Click to show/hide"></span>
                                 </a>
                                 <!-- Start Megamenu Style 2 -->
@@ -242,7 +242,7 @@
                                 <!-- End Megamenu Style 2 -->
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Products
+                                <a class="nav-link" href="#">{{__('app.products')}}
                                     <span class="arw plush" title="Click to show/hide"></span>
                                     <span class="lbl new">New</span>
                                 </a>
@@ -300,7 +300,7 @@
                                 <!-- End Megamenu Style 3 -->
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="#">Pages<span class="arw plush" title="Click to show/hide"></span></a>
+                                <a class="nav-link" href="#">{{__('app.pages')}}<span class="arw plush" title="Click to show/hide"></span></a>
                                 <!-- Start Megamenu Dropdown -->
                                 <div class="megamenu submenu dropdown">
                                     <ul>
@@ -359,7 +359,7 @@
                                 <!-- End Megamenu Dropdown -->
                             </li>
                             <li class="nav-item dropdown">
-                                <a class="nav-link" href="#">Blog<span class="arw plush" title="Click to show/hide"></span></a>
+                                <a class="nav-link" href="#">{{__('app.blog')}}<span class="arw plush" title="Click to show/hide"></span></a>
                                 <!-- Start Megamenu Dropdown -->
                                 <div class="megamenu submenu dropdown">
                                     <ul>
@@ -385,7 +385,7 @@
                 <!-- Start Navigation -->
                 <!-- Start Logo -->
                 <div class="navbar-brand logo mx-auto p-0 text-center">
-                    <a href="index.html" class="logo-img"><img class="img-fluid" src="assets/images/logo/logo.png" alt="logo" title="Posh Auto Parts" /></a>
+                    <a href="/" class="logo-img"><img class="img-fluid" src="{{asset('assets/images/logo/logo.png')}}" alt="logo" title="Auto Parts" /></a>
                 </div>
                 <!-- End Logo -->
                 <!-- Start Right Menu -->
@@ -408,19 +408,20 @@
                         <div class="settinglinks" style="display:none">
                             <!-- Menu Links -->
                             <div class="my-links">
-                                <h4>My Account</h4>
+                                <h4>{{__('app.myaccount')}}</h4>
                                 <ul class="p-0 m-0">
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="register.html">Register</a></li>
-                                    <li><a href="wishlist.html">Wishlist</a></li>
-                                    <li><a href="compare.html">Compare</a></li>
+                                    <li><a href="login.html">{{__('app.login')}}</a></li>
+                                    <li><a href="register.html">{{__('app.register')}}</a></li>
+                                    <li><a href="wishlist.html">{{__('app.wishlist')}}</a></li>
+                                    <li><a href="compare.html">{{__('app.compare')}}</a></li>
                                 </ul>
                             </div>
                             <!-- Emd Menu Links -->
                             <!-- Start Currency Picker -->
                             <div class="my-currency">
-                                <h4>Currency</h4>
+                                <h4>{{__('app.currency')}}</h4>
                                 <ul class="currency-picker">
+                                    <li class="item"><a href="#"><i class="fa fa-bgn"></i> BGN</a></li>
                                     <li class="item"><a href="#"><i class="fa fa-usd"></i> USD</a></li>
                                     <li class="item"><a href="#"><i class="fa fa-eur"></i> EUR</a></li>
                                     <li class="item"><a href="#"><i class="fa fa-gbp"></i> GBP</a></li>
@@ -432,10 +433,10 @@
                             <div class="my-languages">
                                 <h4>Languages</h4>
                                 <ul class="languages-picker">
-                                    <li class="item english"><a href="#">English</a></li>
-                                    <li class="item french"><a href="#">French</a></li>
-                                    <li class="item spanish"><a href="#">Spanish</a></li>
-                                    <li class="item germany"><a href="#">German</a></li>
+                                    <li class="item bulgaria"><a href="#">{{__('app.bulgaria')}}</a></li>
+                                    <li class="item english"><a href="#">{{__('app.english')}}</a></li>
+                                    <li class="item french"><a href="#">{{__('app.french')}}</a></li>
+                                    <li class="item spanish"><a href="#">{{__('app.spanish')}}</a></li>
                                 </ul>
                             </div>
                             <!-- End Languages -->
@@ -468,10 +469,10 @@
                 <div class="row no-gutters">
                     <div class="col-12 col-sm-12 col-md-12 col-lg-3 logo-wellcome">
                         <div class="ftr-logo">
-                            <a href="index.html"><img class="img-fluid" src="assets/images/logo/gray-logo.png" alt="Posh Auto Parts" title="Posh Auto Parts" /></a>
+                            <a href="/"><img class="img-fluid" src="{{asset('assets/images/logo/gray-logo.png')}}" alt="Auto Parts" title="Auto Parts" /></a>
                         </div>
                         <div class="welcome-text">
-                            <p class="m-0">Lorem ipsum dolor sit amet,<br> consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros.</p>
+                            <p class="m-0">{{__('app.footer')}}</p>
                         </div>
                         <div class="social-icons">
                             <ul class="d-flex flex-row align-items-center text-center">
@@ -485,53 +486,38 @@
                         </div>
                     </div>
                     <div class="col-12 col-sm-12 col-md-12 col-lg-9 newsletter-menulinks">
-                        <div class="row no-gutters footer-newsletter">
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                                <h3>Sign up to our Newsletter and receive 10% off your first order!</h3>
-                            </div>
-                            <div class="col-12 col-sm-12 col-md-6 col-lg-6">
-                                <form action="#" class="needs-validation" method="post">
-                                    <div class="form-group m-0 position-relative">
-                                        <input type="text" class="form-control" placeholder="Enter your email address..." required />
-                                        <button class="btn btn-primary" type="submit">
-                                            <i class="fa fa-paper-plane-o"></i>
-                                        </button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
                         <div class="row no-gutters footer-links">
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 menu-items">
-                                <h4>Quick Link</h4>
+                                <h4>{{__('app.links')}}</h4>
                                 <ul class="linklist">
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="about-us.html">About us</a></li>
-                                    <li><a href="faqs.html">FAQs</a></li>
-                                    <li><a href="contact-us.html">Contact</a></li>
+                                    <li><a href="/">{{__('app.home')}}</a></li>
+                                    <li><a href="/blog">{{__('app.blog')}}</a></li>
+                                    <li><a href="/about-us">{{__('app.about')}}</a></li>
+                                    <li><a href="/faq">{{__('app.faq')}}</a></li>
+                                    <li><a href="/contact-us">{{__('app.contact')}}</a></li>
                                 </ul>
                             </div>
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 menu-items">
-                                <h4>Help Link</h4>
+                                <h4>{{__('app.helplinks')}}</h4>
                                 <ul class="linklist">
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="wishlist.html">My Wishlist</a></li>
-                                    <li><a href="order-tracking.html">Order Traking</a></li>
-                                    <li><a href="#">Returns</a></li>
-                                    <li><a href="terms-and-conditions.html">Terms & Conditions</a></li>
+                                    <li><a href="/login">{{__('app.login')}}</a></li>
+                                    <li><a href="/wishlist">{{__('app.mywishlist')}}</a></li>
+                                    <li><a href="/order-traking">{{__('app.ordertraking')}}</a></li>
+                                    <li><a href="#">{{__('app.returns')}}</a></li>
+                                    <li><a href="/terms">{{__('app.terms')}}</a></li>
                                 </ul>
                             </div>
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 menu-items">
-                                <h4>Custom Link</h4>
+                                <h4>{{__('app.customlinks')}}</h4>
                                 <ul class="linklist">
-                                    <li><a href="#">Parts Shop</a></li>
-                                    <li><a href="#">Delivery</a></li>
-                                    <li><a href="#">Refunds</a></li>
-                                    <li><a href="#">Help & support</a></li>
+                                    <li><a href="#">{{__('app.partsshop')}}</a></li>
+                                    <li><a href="#">{{__('app.delivery')}}</a></li>
+                                    <li><a href="#">{{__('app.refunds')}}</a></li>
+                                    <li><a href="#">{{__('app.support')}}</a></li>
                                 </ul>
                             </div>
                             <div class="col-12 col-sm-12 col-md-3 col-lg-3 contact">
-                                <h4>Contact Information</h4>
+                                <h4>{{__('app.contact-information')}}</h4>
                                 <ul class="linklist contact-info d-flex flex-column">
                                     <li><i class="icon ti-location-pin"></i><span>No 40 Baria Street 133/2, <br/>NewYork, USA</span></li>
                                     <li><i class="icon fa fa-phone"></i><a href="tel:+011234567890">(+01) 123 456 7890</a></li>
@@ -553,7 +539,7 @@
                     <i class="fa fa-cc-paypal" aria-hidden="true"></i>
                 </div>
                 <div class="copyright-content pt-md-1 pull-left">
-                    <span class="content"> Copyright &copy; {{date('Y')}} Posh Auto Parts. All Rights Reserved.</span>
+                    <span class="content"> Copyright &copy; {{date('Y')}} Auto Parts. All Rights Reserved.</span>
                 </div>
             </div>
         </div>
@@ -570,13 +556,13 @@
             <div class="container">
                 <div class="modal-content search-inline align-content-center">
                     <div class="search-head position-relative">
-                        <h3>What are you looking for?</h3>
+                        <h3>{{__('app.what-search')}}</h3>
                         <a class="search-close" data-dismiss="modal" aria-label="Close">
                             <i class="ti-close" aria-hidden="true"></i>
                         </a>
                     </div>
                     <form action="#" class="position-relative">
-                        <input type="text" class="form-control" placeholder="Search Products..." required />
+                        <input type="text" class="form-control" placeholder="{{__('app.search-product')}}" required />
                         <button class="search-btn" type="submit"><i class="ti-search"></i></button>
                     </form>
                 </div>
@@ -589,14 +575,14 @@
     <div class="minicart-wrapper">
         <div class="cart-drawer model fade right show cart-drawer-right">
             <div class="minicart-head">
-                <h3>Shopping Cart</h3>
+                <h3>{{__('app.shopping-card')}}</h3>
                 <a class="close-btn active">
                     <i class="ti-close"></i>
                 </a>
             </div>
             <div class="minicart-details">
                 <div class="empty-cart">
-                    <p>You have no items in your shopping cart.</p>
+                    <p>{{__('app.empty-card')}}</p>
                 </div>
                 <ul class="cart-lists clearfix">
                     <li class="cart-item d-table">
@@ -669,25 +655,25 @@
             <div class="minicart-bottom-actions">
                 <div class="pro-totals d-inline-block w-100">
                     <div class="items mb-1 clearfix">
-                        <span class="item subtotal float-left">Subtotal:</span>
+                        <span class="item subtotal float-left">{{__('app.subtotal')}}:</span>
                         <span class="price-total float-right"><span class="price">$1356.00</span></span>
                     </div>
                     <div class="items mb-1 clearfix">
-                        <span class="item shipping float-left">Shipping:</span>
+                        <span class="item shipping float-left">{{__('app.shipping')}}:</span>
                         <span class="price-total float-right"><span class="price">$10.00</span></span>
                     </div>
                     <div class="items mb-1 clearfix">
-                        <span class="item tax float-left">Tax:</span>
+                        <span class="item tax float-left">{{__('app.tax')}}:</span>
                         <span class="price-total float-right"><span class="price">$0.00</span></span>
                     </div>
                     <div class="items clearfix">
-                        <span class="item total float-left">Total:</span>
+                        <span class="item total float-left">{{__('app.total')}}:</span>
                         <span class="price-total float-right"><span class="price">$1366.00</span></span>
                     </div>
                 </div>
                 <div class="actions d-inline-block w-100 text-center">
-                    <a class="btn btn-primary d-block mb-4 font-sm-14" href="cart.html">View Cart</a>
-                    <a class="btn btn-secondary d-block font-sm-14" href="checkout.html">Proceed to checkout</a>
+                    <a class="btn btn-primary d-block mb-4 font-sm-14" href="cart.html">{{__('app.view-card')}}</a>
+                    <a class="btn btn-secondary d-block font-sm-14" href="checkout.html">{{__('app.proceed-checkout')}}</a>
                 </div>
             </div>
         </div>
@@ -837,10 +823,10 @@
 
     <!-- Start Cookie Message -->
     <div id="cookie-message" class="alert fade show" role="alert">
-        <p>This is a standard cookie notice which you can easily adapt or disable as you like in the admin. We yse cookie to ensure that we give you the best expenrience on our website.</p>
+        <p>{{__('app.cookie')}}</p>
         <div class="cookie-action">
-            <a class="cookie-more-info" href="#"> Privacy Policy </a>
-            <a class="cookie-accept" href="#" data-dismiss="alert" aria-label="Close">Accept <i class="ti-check"></i></a>
+            <a class="cookie-more-info" href="#"> {{__('app.privacy')}} </a>
+            <a class="cookie-accept" href="#" data-dismiss="alert" aria-label="Close">{{__('app.accept')}} <i class="ti-check"></i></a>
         </div>
     </div>
     <!-- End Cookie Message -->
