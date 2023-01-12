@@ -1,7 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\HomeController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,4 +16,21 @@ use App\Http\Controllers\HomeController;
 |
 */
 
+    /*
+    |--------------------------------------------------------------------------
+    | Web Routes
+    |--------------------------------------------------------------------------
+    */
+
 Route::get('/', [HomeController::class, 'home']);
+
+    /*
+    |--------------------------------------------------------------------------
+    | Admin Panel Routes
+    |--------------------------------------------------------------------------
+    */
+
+Route::get('/adminlogin', [LoginController::class, 'login'])->name('Admin Login');
+Route::post('/adminlogin', [LoginController::class, 'do_login']);
+
+Route::get('/adminpanel', [AdminController::class, 'dashboard'])->name('Dashboard');
