@@ -17,4 +17,18 @@ return [
     'password' => 'The provided password is incorrect.',
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
 
+    /*
+   |--------------------------------------------------------------------------
+   | Login
+   |--------------------------------------------------------------------------
+   */
+    'home' => 'Home',
+    'login' => 'Login',
+    'subtitle-login' => 'If you have an account with us, log in using your email address.',
+    'email' => 'Email Address',
+    'password-type' => 'Password',
+    'rememberme' => 'Remember Me!',
+    'signin' => 'Sign In',
+    'forgotpassword' => 'Forgot your password?',
+    'createaccount' => 'Create An Acoount',
 ];

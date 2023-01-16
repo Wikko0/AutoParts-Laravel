@@ -410,8 +410,13 @@
                             <div class="my-links">
                                 <h4>{{__('app.myaccount')}}</h4>
                                 <ul class="p-0 m-0">
+                                    @guest
                                     <li><a href="/login">{{__('app.login')}}</a></li>
                                     <li><a href="/register">{{__('app.register')}}</a></li>
+                                    @endguest
+                                    @auth
+                                    <li><a href="/account">{{__('app.myaccount')}}</a></li>
+                                    @endauth
                                     <li><a href="/wishlist">{{__('app.wishlist')}}</a></li>
                                     <li><a href="/compare">{{__('app.compare')}}</a></li>
                                 </ul>
