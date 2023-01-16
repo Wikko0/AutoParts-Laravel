@@ -22,7 +22,17 @@ use Illuminate\Support\Facades\Route;
     |--------------------------------------------------------------------------
     */
 
+
 Route::get('/', [HomeController::class, 'home']);
+
+    /*
+   |--------------------------------------------------------------------------
+   | User Routes
+   |--------------------------------------------------------------------------
+   */
+
+Auth::routes();
+
 
     /*
     |--------------------------------------------------------------------------
@@ -34,3 +44,5 @@ Route::get('/adminlogin', [LoginController::class, 'login'])->name('Admin Login'
 Route::post('/adminlogin', [LoginController::class, 'do_login']);
 
 Route::get('/adminpanel', [AdminController::class, 'dashboard'])->name('Dashboard');
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
