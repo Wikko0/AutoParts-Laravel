@@ -827,13 +827,7 @@
     <!-- End Product Wishlist Added Popup -->
 
     <!-- Start Cookie Message -->
-    <div id="cookie-message" class="alert fade show" role="alert">
-        <p>{{__('app.cookie')}}</p>
-        <div class="cookie-action">
-            <a class="cookie-more-info" href="#"> {{__('app.privacy')}} </a>
-            <a class="cookie-accept" href="#" data-dismiss="alert" aria-label="Close">{{__('app.accept')}} <i class="ti-check"></i></a>
-        </div>
-    </div>
+    @include('cookie-consent::index')
     <!-- End Cookie Message -->
 
 

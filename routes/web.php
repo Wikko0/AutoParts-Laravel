@@ -34,6 +34,7 @@ Route::get('/', [HomeController::class, 'home']);
 
 Auth::routes();
 Route::get('/account', [UserController::class, 'account']);
+Route::get('/logout', [UserController::class, 'logout']);
 
 
     /*

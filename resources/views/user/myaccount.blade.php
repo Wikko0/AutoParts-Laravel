@@ -19,8 +19,8 @@
             <div class="account-upper-info">
                 <div class="row align-items-center justify-content-center row-eq-height no-gutters">
                     <div class="info-item col-12 col-sm-12 col-md-3 col-lg-3">
-                        <p class="mb-1">Hello <strong>Posh</strong></p>
-                        <p class="mb-0">(not <strong>Posh</strong>? <a class="link-color" href="login.html">Log out</a>)</p>
+                        <p class="mb-1">Hello <strong>{{$user->name}}</strong></p>
+                        <p class="mb-0">(not <strong>{{$user->name}}</strong>? <a class="link-color" href="/logout">Logout</a>)</p>
                     </div>
                     <div class="info-item col-12 col-sm-12 col-md-4 col-lg-4">
                         <p class="mb-1">Need Assistance? Customer service at.</p>
@@ -46,7 +46,7 @@
                             <a class="nav-link" id="my-account-downloads-tab" data-toggle="pill" href="#my-account-downloads" role="tab" aria-controls="my-account-downloads" aria-selected="false">Downloads</a>
                             <a class="nav-link" id="my-account-address-tab" data-toggle="pill" href="#my-account-address" role="tab" aria-controls="my-account-address" aria-selected="false">Addresses</a>
                             <a class="nav-link" id="my-account-details-tab" data-toggle="pill" href="#my-account-details" role="tab" aria-controls="my-account-details" aria-selected="false">Account Details</a>
-                            <a class="nav-link" href="login.html">Logout</a>
+                            <a class="nav-link" href="/logout">Logout</a>
                         </div>
                     </div>
                     <!-- End My Account Nav -->
