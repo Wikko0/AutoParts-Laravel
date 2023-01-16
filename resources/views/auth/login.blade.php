@@ -45,7 +45,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="form-check">
-                                    <input type="checkbox" class="form-check-input" id="dropdownCheck" name="remember" {{ old('remember') ? 'checked' : '' }} required />
+                                    <input type="checkbox" class="form-check-input" id="dropdownCheck" name="remember" {{ old('remember') ? 'checked' : '' }} />
                                     <label class="form-check-label ml-3 mb-0" for="dropdownCheck">{{__('auth.rememberme')}}</label>
                                 </div>
                             </div>

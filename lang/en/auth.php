@@ -34,10 +34,19 @@ return [
 
     /*
   |--------------------------------------------------------------------------
-  | Login
+  | Register
   |--------------------------------------------------------------------------
   */
     'firstname' => 'First Name',
     'subtitle-register' => 'Creating an account will save you time at checkout and allow you to access your order status and history.',
     'password-confirm' => 'Password Confirm',
+
+    /*
+|--------------------------------------------------------------------------
+| Forgot Password
+|--------------------------------------------------------------------------
+*/
+    'forgot-password' => 'Forgot Password',
+    'passwordreset' => 'Password Reset',
+    'subtitle-forgot' => 'Email address you use to log in to your account. We\'ll send you an email with instructions to choose a new password. ',
 ];

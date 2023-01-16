@@ -1,47 +1,54 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <main class="main-content">
+        <!-- Start Breadcrumb -->
+        <div class="breadcrumbs text-center">
+            <div class="container">
+                <h1>{{__('auth.forgot-password')}}</h1>
+                <ul class="breadcrumb bg-transparent m-0 p-0 justify-content-center">
+                    <li class="breadcrumb-item"><a href="/" title="Home">{{__('auth.home')}}</a></li>
+                    <li class="breadcrumb-item active">{{__('auth.forgot-password')}}</li>
+                </ul>
+            </div>
+        </div>
+        <!-- End Breadcrumb -->
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+        <!-- Start Forgot Password -->
+        <div class="forgot-password">
+            <div class="container">
+                @if (session('status'))
+                    <div class="alert alert-success" role="alert">
+                        {{ session('status') }}
+                    </div>
+                @endif
+                <div class="row row-sp">
+                    <div class="col-sp col-12 col-sm-12 col-md-12 col-lg-6 offset-lg-3">
+                        <div class="page-title text-center">
+                            <h1>{{__('auth.forgot-password')}}</h1>
+                            <p class="subtitle mb-0">{{__('auth.subtitle-forgot')}}</p>
                         </div>
-                    @endif
 
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
+                        <form action="{{ route('password.email') }}" method="POST" class="pass-forgot-form needs-validation" novalidate>
+                          @csrf
+                            <div class="form-group">
+                                <label>{{__('auth.email')}} *</label>
+                                <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="" required />
                                 @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
                                 @enderror
                             </div>
-                        </div>
-
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
+                            <div class="forgot-password-btn mt-5 text-center">
+                                <button type="submit" class="btn btn-primary btn-block">{{__('auth.passwordreset')}}</button>
                             </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+        <!-- End Forgot Password -->
+    </main>
 @endsection
+
