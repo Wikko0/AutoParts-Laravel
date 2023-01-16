@@ -7,7 +7,7 @@
             <div class="container">
                 <h1>Login</h1>
                 <ul class="breadcrumb bg-transparent m-0 p-0 justify-content-center">
-                    <li class="breadcrumb-item"><a href="index.html" title="Home">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/" title="Home">Home</a></li>
                     <li class="breadcrumb-item active">Login</li>
                 </ul>
             </div>
@@ -28,7 +28,6 @@
                             <div class="form-group">
                                 <label>Email Address *</label>
                                 <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="" required />
-                                <div class="invalid-feedback">Please enter your email.</div>
                                 @error('email')
                                 <div class="invalid-feedback">
                                     {{ $message }}

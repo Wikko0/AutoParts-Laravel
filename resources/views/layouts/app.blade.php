@@ -410,10 +410,10 @@
                             <div class="my-links">
                                 <h4>{{__('app.myaccount')}}</h4>
                                 <ul class="p-0 m-0">
-                                    <li><a href="login.html">{{__('app.login')}}</a></li>
-                                    <li><a href="register.html">{{__('app.register')}}</a></li>
-                                    <li><a href="wishlist.html">{{__('app.wishlist')}}</a></li>
-                                    <li><a href="compare.html">{{__('app.compare')}}</a></li>
+                                    <li><a href="/login">{{__('app.login')}}</a></li>
+                                    <li><a href="/register">{{__('app.register')}}</a></li>
+                                    <li><a href="/wishlist">{{__('app.wishlist')}}</a></li>
+                                    <li><a href="/compare">{{__('app.compare')}}</a></li>
                                 </ul>
                             </div>
                             <!-- Emd Menu Links -->
