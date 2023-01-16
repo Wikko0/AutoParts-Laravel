@@ -31,4 +31,13 @@ return [
     'signin' => 'Sign In',
     'forgotpassword' => 'Forgot your password?',
     'createaccount' => 'Create An Acoount',
+
+    /*
+  |--------------------------------------------------------------------------
+  | Login
+  |--------------------------------------------------------------------------
+  */
+    'firstname' => 'First Name',
+    'subtitle-register' => 'Creating an account will save you time at checkout and allow you to access your order status and history.',
+    'password-confirm' => 'Password Confirm',
 ];

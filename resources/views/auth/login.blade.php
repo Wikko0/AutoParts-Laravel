@@ -5,7 +5,7 @@
         <!-- Start Breadcrumb -->
         <div class="breadcrumbs text-center">
             <div class="container">
-                <h1>Login</h1>
+                <h1>{{__('auth.login')}}</h1>
                 <ul class="breadcrumb bg-transparent m-0 p-0 justify-content-center">
                     <li class="breadcrumb-item"><a href="/" title="Home">{{__('auth.home')}}</a></li>
                     <li class="breadcrumb-item active">{{__('auth.login')}}</li>
