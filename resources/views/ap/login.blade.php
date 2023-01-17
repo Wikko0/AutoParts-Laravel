@@ -24,11 +24,22 @@
             <a href="/" class="h1"><b>Auto</b>Parts</a>
         </div>
         <div class="card-body">
+            @if ($errors->any())
+                <div class="alert alert-warning alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                    </button>
+                    <h5><i class="icon fas fa-exclamation-triangle"></i> Alert!</h5>
+                    @foreach ($errors->all() as $error)
+                        <ul>{{ $error }}</ul>
+                    @endforeach
+                </div>
+            @endif
             <p class="login-box-msg">Sign in to start your session</p>
 
             <form action="/adminlogin" method="post">
+                @csrf
                 <div class="input-group mb-3">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" placeholder="Email" name="email" @if(Cookie::has('email')) value="{{Cookie::get('email')}}" @endif>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-envelope"></span>
@@ -36,7 +47,7 @@
                     </div>
                 </div>
                 <div class="input-group mb-3">
-                    <input type="password" class="form-control" placeholder="Password">
+                    <input type="password" class="form-control" placeholder="Password" name="password" @if(Cookie::has('password')) value="{{Cookie::get('password')}}" @endif>
                     <div class="input-group-append">
                         <div class="input-group-text">
                             <span class="fas fa-lock"></span>
@@ -46,7 +57,7 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="icheck-primary">
-                            <input type="checkbox" id="remember">
+                            <input type="checkbox" id="remember" name="remember_me">
                             <label for="remember">
                                 Remember Me
                             </label>

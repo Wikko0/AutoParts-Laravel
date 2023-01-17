@@ -23,10 +23,9 @@ class UserController extends Controller
         return view('user.myaccount', ['user' => $this->user]);
     }
 
-    public function logout(Request $request)
+    public function logout()
     {
         Auth::logout();
-
         return redirect('/');
     }
 }
