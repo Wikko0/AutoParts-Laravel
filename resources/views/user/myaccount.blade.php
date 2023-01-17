@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Account')
 @section('content')
 <main class="main-content">
     <!-- Start Breadcrumb -->

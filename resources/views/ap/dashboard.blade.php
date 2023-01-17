@@ -1,5 +1,5 @@
 @extends('layouts.ap')
-
+@section('title', 'Dashboard')
 @section('content')
 
     <!-- Main content -->

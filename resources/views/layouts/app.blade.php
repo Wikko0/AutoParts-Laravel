@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content=" " />
     <!-- Title -->
-    <title>AutoParts - Laravel</title>
+    <title>AutoParts - Laravel | @yield('title')</title>
     <!-- Favicon  -->
     <link rel="shortcut icon" href="{{asset('assets/images/fevicon.png')}}" />
 
