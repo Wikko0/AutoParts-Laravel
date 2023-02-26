@@ -24,6 +24,14 @@
             <a href="/" class="h1"><b>Auto</b>Parts</a>
         </div>
         <div class="card-body">
+            @if(session('success'))
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
+                    </button>
+                    <h5><i class="icon fas fa-check"></i> Alert!</h5>
+                    <ul>{{session('success')}}</ul>
+                </div>
+            @endif
             @if ($errors->any())
                 <div class="alert alert-warning alert-dismissible">
                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;
@@ -36,7 +44,7 @@
             @endif
             <p class="login-box-msg">Sign in to start your session</p>
 
-            <form action="/adminlogin" method="post">
+            <form action="{{route('admin.login')}}" method="post">
                 @csrf
                 <div class="input-group mb-3">
                     <input type="email" class="form-control" placeholder="Email" name="email" @if(Cookie::has('email')) value="{{Cookie::get('email')}}" @endif>
@@ -57,7 +65,7 @@
                 <div class="row">
                     <div class="col-8">
                         <div class="icheck-primary">
-                            <input type="checkbox" id="remember" name="remember_me">
+                            <input type="checkbox" id="remember" name="remember">
                             <label for="remember">
                                 Remember Me
                             </label>

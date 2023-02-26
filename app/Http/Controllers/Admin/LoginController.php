@@ -3,16 +3,17 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Admin;
 use Illuminate\Http\Request;
 use Cookie;
+
+use Illuminate\Support\Facades\Auth;
 use function view;
 
 class LoginController extends Controller
 {
     public function login()
     {
-        if(session('Admin')) {
+        if(Auth::user() && Auth::user()->is_admin == 'Yes') {
             return redirect('adminpanel');
         }else{
             return view('ap.login');
@@ -21,22 +22,35 @@ class LoginController extends Controller
 
     public function do_login(Request $request)
     {
-        $admin = Admin::where('email', '=', $request->email)
-            ->where('password', '=', $request->password)
-            ->first();
+        $credentials = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => ['required'],
+        ]);
 
-        if ($admin) {
-            $request->session()->put('Admin', $admin->name);
+        $remember = ($request->get('remember') == 'on') ? true : false;
 
-            if ($request->has('remember_me')){
-                Cookie::queue('email', $request->email,1440);
-                Cookie::queue('password', $request->password,1440);
-            }
 
-            return redirect('adminpanel');
+        if (Auth::attempt($credentials, $remember)) {
+
+            Cookie::queue('email', $credentials['email'], 1440);
+            Cookie::queue('password', $credentials['password'], 1440);
 
         } else {
             return redirect()->back()->withErrors( 'Wrong password or account doesn\'t exist');
         }
+
+        $user = Auth::user();
+        if ($user->is_admin == 'No') {
+            Auth::logout();
+            return redirect()->back()->withErrors('You don\'t have permission to authenticate as admin');
+        }
+
+        return redirect('adminpanel');
+    }
+
+    public function logout(){
+
+        Auth::logout();
+        return redirect('adminlogin')->withSuccess('You have logout successful');
     }
 }

@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
     */
 
 
-Route::get('/', [HomeController::class, 'home']);
+    Route::get('/', [HomeController::class, 'home'])->name('home');
 
     /*
    |--------------------------------------------------------------------------
@@ -32,9 +32,9 @@ Route::get('/', [HomeController::class, 'home']);
    |--------------------------------------------------------------------------
    */
 
-Auth::routes();
-Route::get('/account', [UserController::class, 'account']);
-Route::get('/logout', [UserController::class, 'logout']);
+    Auth::routes();
+    Route::get('/account', [UserController::class, 'account'])->name('account');
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
 
     /*
@@ -43,6 +43,7 @@ Route::get('/logout', [UserController::class, 'logout']);
     |--------------------------------------------------------------------------
     */
 
-Route::get('/adminlogin', [LoginController::class, 'login']);
-Route::post('/adminlogin', [LoginController::class, 'do_login']);
-Route::get('/adminpanel', [AdminController::class, 'dashboard']);
+    Route::get('/adminlogin', [LoginController::class, 'login'])->name('admin.login');
+    Route::post('/adminlogin', [LoginController::class, 'do_login'])->name('admin.login');
+    Route::get('/admin/logout', [LoginController::class, 'logout'])->name('admin.logout');
+    Route::get('/adminpanel', [AdminController::class, 'dashboard'])->name('admin.dashboard');
